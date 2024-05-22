@@ -8,23 +8,23 @@ const Header = () => {
   const [name, setName] = useState(null);
 
   useEffect(() => {
-   
-      correctNavigation();
     
-  }, );
-  console.log("user", user)
-  console.log("name", name)
+    correctNavigation();
+ } );
+
   const correctNavigation = () => {
     try {
-      const userAuthData = JSON.parse(localStorage.getItem("userauth"));
+      const userAuthData =  JSON.parse(localStorage.getItem("userauth"));
+     
       // console.log("userAuthData", userAuthData)
       setUser(userAuthData.user);
       setName(userAuthData?.user?.name);
      
     } catch (error) {
-      console.error("Failed to parse userauth from localStorage:", error);
+      return
     }
   };
+
 
   const toggle = () => setIsOpen(!isOpen);
 
@@ -36,19 +36,17 @@ const Header = () => {
 
   return (
     <Navbar light color="info" expand="md">
-      <NavbarBrand>
-        <Link to="/" className="text-success fw-bold text-decoration-none">
-          Magnet Brains
-        </Link>
+      <NavbarBrand   id="RouterNavLink"  to="/" className="text-success fw-bold text-decoration-none">
+      Magnet Brains
       </NavbarBrand>
 
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
         <Nav className="ml-auto text-white" navbar style={{ marginLeft: "auto" }}>
-          {user===null ? (
+          {!user ? (
             <>
               <li>
-                <Link
+               <Link  id="RouterNavLink" 
                   to="/signup"
                   className="text-white text-decoration-none fw-bold mx-2"
                 >
@@ -56,7 +54,7 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link
+               <Link   id="RouterNavLink" 
                   to="/signin"
                   className="text-white text-decoration-none fw-bold mx-2"
                 >
@@ -72,7 +70,7 @@ const Header = () => {
                   {name}
                 </span>
               </span>
-              <Link
+             <Link  id="RouterNavLink" 
                 onClick={handleSignout}
                 to="/"
                 className="text-danger btn text-decoration-none fw-bold mx-2"

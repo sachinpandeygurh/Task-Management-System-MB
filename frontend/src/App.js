@@ -14,7 +14,10 @@ function App() {
   const [user, setUser] = useState(null);
                
          useEffect(() => {
-           correctNavigation();
+          if (user==null) {
+            
+            correctNavigation();
+          }
          });
        
          const correctNavigation = () => {
