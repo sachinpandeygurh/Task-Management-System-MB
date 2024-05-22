@@ -1,4 +1,3 @@
-// reducers.js
 import { FETCH_TASKS_SUCCESS, DELETE_TASK_SUCCESS, UPDATE_TASK_SUCCESS } from './types';
 
 const initialState = {

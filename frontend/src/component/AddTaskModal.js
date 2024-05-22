@@ -25,7 +25,7 @@ const AddTaskModal = ({ show, handleClose, handleTaskCreated }) => {
                 dueDate
             };
 
-            const response = await axios.post(`/api/tasks/create-task/${userId}`, taskData , config);
+            const response = await axios.post(`http://localhost:8080/api/tasks/create-task/${userId}`, taskData , config);
             console.log("response", response)
             if (response.status === 201) {
                 toast.success("Task Created")

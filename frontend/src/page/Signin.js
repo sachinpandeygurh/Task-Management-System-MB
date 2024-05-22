@@ -17,11 +17,11 @@ const Signin = () => {
         toast.error("All fields are required to fill");
         return;
       }
-      const response = await axios.post('/api/users/login', {
+      const response = await axios.post('http://localhost:8080/api/users/login', {
         email,
         password
       });
-// console.log("response.data", response.data);      
+         
       if (response?.status === 200) {
         localStorage.setItem('userauth', JSON.stringify(response?.data));
         const user = JSON.parse(localStorage.getItem('userauth'));

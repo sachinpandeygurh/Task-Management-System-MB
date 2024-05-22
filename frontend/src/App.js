@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -11,13 +11,23 @@ import Signin from './page/Signin';
 import Signup from './page/Signup';
 
 function App() {
- 
+  const [user, setUser] = useState(null);
+               
+         useEffect(() => {
+           correctNavigation();
+         });
+       
+         const correctNavigation = () => {
+           const userAuthData = JSON.parse(localStorage.getItem("userauth"));
+           setUser(userAuthData?.user);
+        
+         }
   return (
     <Router>
       <ToastContainer />
       <Header />
       <Routes>
-      <Route path="/" element={<Navigate to="/home"/>} />
+      <Route path="*" element={user? <Navigate to='/home'/>: <Navigate to='/signin'/>} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/home" element={<Home />} />

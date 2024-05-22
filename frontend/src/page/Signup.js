@@ -16,12 +16,12 @@ const Signup = () => {
         toast.error("All fields are required to fill");
         return;
       }
-      const response = await axios.post(`/api/users/register`, {
+      const response = await axios.post(`http://localhost:8080/api/users/register`, {
         name,
         email,
         password
       });
-// console.log("response.data", response.data);
+      
       if (response.data.success) {
         localStorage.setItem('userauth', JSON.stringify(response.data));
         navigate("/home");

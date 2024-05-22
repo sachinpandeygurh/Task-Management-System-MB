@@ -1,4 +1,3 @@
-// actions.js
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { FETCH_TASKS_SUCCESS, DELETE_TASK_SUCCESS, UPDATE_TASK_SUCCESS } from './types';
@@ -12,7 +11,7 @@ export const fetchTasks = () => async (dispatch) => {
         Authorization: `Bearer ${user.token}`,
       },
     };
-    const response = await axios.get(`/api/tasks/get-tasks/${userId}`, config );
+    const response = await axios.get(`http://localhost:8080/api/tasks/get-tasks/${userId}`, config );
     dispatch({ type: FETCH_TASKS_SUCCESS, payload: response.data });
   } catch (error) {
     console.error('Error fetching tasks:', error);
@@ -27,7 +26,7 @@ export const deleteTask = (taskId) => async (dispatch) => {
         Authorization: `Bearer ${user.token}`,
       },
     };
-    await axios.delete(`/api/tasks/del-task/${taskId}`, config);
+    await axios.delete(`http://localhost:8080/api/tasks/del-task/${taskId}`, config);
     dispatch({ type: DELETE_TASK_SUCCESS, payload: taskId });
     toast.success('Task deleted successfully');
   } catch (error) {
@@ -44,7 +43,7 @@ export const updateTask = (taskData) => async (dispatch) => {
         Authorization: `Bearer ${user.token}`,
       },
     };
-    await axios.put(`/api/tasks/update-task/${taskData._id}`, taskData, config);
+    await axios.put(`http://localhost:8080/api/tasks/update-task/${taskData._id}`, taskData, config);
     dispatch({ type: UPDATE_TASK_SUCCESS, payload: taskData });
     toast.success('Task updated successfully');
   } catch (error) {
