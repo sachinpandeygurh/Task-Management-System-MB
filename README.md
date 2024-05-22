@@ -1,7 +1,4 @@
-Sure! Here's the revised `README.md` file with only file mentions and emojis:
-
-```markdown
-# Task Management System
+# Task Management System - MB
 
 This is a Task Management System developed using React and Redux for the frontend, with a Node.js backend. The system allows users to manage their tasks with features like creating, editing, deleting, and viewing tasks.
 
