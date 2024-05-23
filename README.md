@@ -1,132 +1,181 @@
 # Task Management System - MB
 
-This is a Task Management System developed using React and Redux for the frontend, with a Node.js backend. The system allows users to manage their tasks with features like creating, editing, deleting, and viewing tasks.
+This repository contains a Task Management System built with React, Redux, Node.js, Express, and MongoDB. The system allows users to manage tasks effectively with features such as task creation, updating, and deletion.
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [Usage](#usage)
 - [Features](#features)
-- [Folder Structure](#folder-structure)
-- [Dependencies](#dependencies)
-- [Redux Setup](#redux-setup)
-- [Code Examples](#code-examples)
+- [Technologies Used](#technologies-used)
+- [Project Structure](#project-structure)
+  - [Frontend Setup](#frontend-setup)
+  - [Backend Setup](#backend-setup)
+- [Usage](#usage)
+- [Screenshots](#screenshots)
 - [Contributing](#contributing)
-- [License](#license)
-
-## Installation
-
-1. Clone the repository:
-
-```sh
-git clone https://github.com/sachinpandeygurh/Task-Management-System-MB.git
-```
-
-2. Navigate to the project directory:
-
-```sh
-cd Task-Management-System-MB
-```
-
-3. Install the dependencies:
-
-```sh
-npm install
-```
-
-## Usage
-
-1. Start the development server:
-
-```sh
-npm start
-```
-
-2. Open your browser and navigate to `http://localhost:3000`.
+- [Contact](#contact)
 
 ## Features
 
-- 🛠️ User authentication with signup and signin.
-- 📋 Task management including adding, editing, and deleting tasks.
-- 🔗 Integration with backend APIs.
-- 📱 Responsive design using Bootstrap.
+✨ **User Authentication**: Secure user registration and login functionality.  
+✨ **Task Management**: Create, update, and delete tasks with ease.  
+✨ **Responsive Design**: Mobile-friendly user interface.  
+✨ **Notifications**: Real-time feedback with toast notifications.
 
-## Folder Structure
+## Technologies Used
 
-```plaintext
-Redux/
-|-- actions.js
-|-- reducers.js
-|-- store.js
-|-- types.js
-src/
-|-- components/
-|   |-- AddTaskModal.js
-|   |-- EditTaskModal.js
-|-- layout/
-|   |-- Header.js
-|-- pages/
-|   |-- Home.js
-|   |-- Signin.js
-|   |-- Signup.js
-|-- App.js
-|-- index.js
-```
-
-## Dependencies
-
+### Frontend
 - React
 - Redux
-- React-Redux
-- Redux-Thunk
-- React-Bootstrap
-- React-Router-Dom
+- React-Router
+- Bootstrap
 - Axios
-- React-Toastify
 
-## Redux Setup
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT (JSON Web Tokens)
+- bcryptjs
 
-### `src/Redux/actions.js`
+## Project Structure
 
-- `fetchTasks`
-- `deleteTask`
-- `updateTask`
+### Frontend
+```
+frontend/
+├── public/
+├── src/
+│   ├── layout/
+│   │   ├── Header.js
+│   ├── components/
+│   │   ├── addTaskModal.js
+│   │   ├── editTask.js
+│   │   ├── userTable.js
+│   ├── pages/
+│   │   ├── Home.js
+│   │   ├── Signin.js
+│   │   ├── Signup.js
+│   ├── Redux/
+│   │   ├── actions.js
+│   │   ├── reducers.js
+│   │   ├── store.js
+│   │   ├── types.js
+│   ├── App.js
+│   ├── index.js
+├── package.json
 
-### `src/Redux/reducers.js`
+```
 
-- `FETCH_TASKS_SUCCESS`
-- `DELETE_TASK_SUCCESS`
-- `UPDATE_TASK_SUCCESS`
+### Backend
+```
+backend/
+├── controllers/
+│   ├── authController.js
+│   ├── taskController.js
+├── models/
+│   ├── UserModel.js
+│   ├── TaskModel.js
+├── routes/
+│   ├── userRoutes.js
+│   ├── taskRoutes.js
+├── middleware/
+│   ├── authMiddleware.js
+├── config/
+│   ├── db.js
+├── server.js
+├── package.json
 
-### `src/Redux/store.js`
+```
 
-- `thunk`
-- `rootReducer`
+## Frontend Setup
 
-### `src/Redux/types.js`
+### Prerequisites
 
-- `FETCH_TASKS_SUCCESS`
-- `DELETE_TASK_SUCCESS`
-- `UPDATE_TASK_SUCCESS`
+- Node.js
+- npm or yarn
 
-## Code Examples
+### Installation
 
-### Header Component
+1. Clone the repository:
 
-- `Header.js`
+   ```bash
+   git clone https://github.com/sachinpandeygurh/Task-Management-System-MB.git
+   ```
 
-### App Component
+2. Navigate to the frontend directory:
 
-- `App.js`
+   ```bash
+   cd Task-Management-System-MB
+   ```
 
-### Task Adding Button
+3. Install the dependencies:
 
-- `AddTaskModal.js`
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm start
+   ```
+
+## Backend Setup
+
+### Prerequisites
+
+- Node.js
+- npm or yarn
+- MongoDB
+
+### Installation
+
+1. Navigate to the backend directory:
+
+   ```bash
+   cd Task-Management-System-MB/backend
+   ```
+
+2. Install the dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Create a `.env` file in the backend directory and add your MongoDB URI and JWT secret:
+
+   ```env
+   MONGODB_URI=your_mongodb_uri
+   JWT_SECRET=your_jwt_secret
+   ```
+
+4. Start the backend server:
+
+   ```bash
+   npm start
+   ```
+
+## Usage
+
+1. Register a new user or login with existing credentials.
+2. Create, update, and delete tasks from the dashboard.
+3. View task details and manage your tasks efficiently.
+
+## Screenshots
+
+📸 **Login Page**  
+📸 **Dashboard**  
+📸 **Task Management**
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request for any bugs, enhancements, or features.
+🤝 Contributions are welcome! Please fork the repository and create a pull request with your changes.
 
-## License
+## Contact
 
-This project is licensed under the MIT License.
+For any inquiries or feedback, please reach out to me:
+
+- [LinkedIn](https://www.linkedin.com/in/sachinpandeygurh)
+- Visit my [portfolio](https://sachinpandeyportfolio.netlify.app)
+
+Thank you for using our Task Management System! We hope it helps you stay organized and productive. ✨
